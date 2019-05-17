@@ -1,0 +1,69 @@
+scalar DateTime
+
+type Query {
+	"""
+	查询所有发表文章
+	"""
+	publishedPosts: [Post!]!
+	"""
+	查询指定id文章
+	"""
+	post(postId: ID!): Post
+	"""
+	查询指定作者的文章
+	"""
+	postsByUser(userId: ID!): [Post!]!
+	"""
+	查询所有用户
+	"""
+	queryUsers: [User!]!
+	"""
+	查询单个用户
+	"""
+	queryUser(id:String!):User
+}
+
+type Mutation {
+	createUser(name: String!): User
+	updateUser(id:String!,name:String!):User
+	deleteUser(id:String!):User
+	"""
+	新建草稿
+	"""
+	createDraft(title: String!, userId: ID!): Post
+	"""
+	发布
+	"""
+	publish(postId: ID!): Post
+	"""
+	注册
+	"""
+	signup(email: String!, password: String!, name: String): AuthPayload!
+	"""
+	登陆
+	"""
+	login(email: String!, password: String!): AuthPayload!
+}
+
+type AuthPayload {
+	token: String!
+	user: User!
+}
+
+type User {
+	id: ID!
+	email: String
+	name: String!
+	# posts: [Post!]!
+	createdAt: DateTime!
+	updatedAt: DateTime!
+}
+
+type Post {
+	id: ID!
+	title: String!
+	published: Boolean!
+	# author: User
+	createdAt: DateTime!
+	updatedAt: DateTime!
+}

@@ -1,0 +1,26 @@
+{
+  "name": "prismademo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "debug": "nodemon --config nodemon-debug.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "cookie-parser": "^1.4.4",
+    "graphql": "^14.3.0",
+    "graphql-shield": "^5.3.5",
+    "graphql-yoga": "^1.17.4",
+    "jsonwebtoken": "^8.5.1",
+    "prisma-client-lib": "^1.30.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
