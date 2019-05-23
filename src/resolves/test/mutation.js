@@ -1,6 +1,5 @@
 const { hash, compare } = require('bcrypt')
 const { sign } = require('jsonwebtoken')
-const { APP_SECRET, getUserId } = require('../../utils/getUser')
 
 const TestMutation = {
     // 新增草稿
